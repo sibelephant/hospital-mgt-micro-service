@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src",
+    "paths": {
+      "@hospital/db": ["packages/db/dist/index.d.ts"],
+      "@hospital/db/*": ["packages/db/dist/*.d.ts"]
+    }
+  },
+  "include": ["src/**/*.ts"]
+}

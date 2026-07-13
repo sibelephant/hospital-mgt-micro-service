@@ -1,0 +1,27 @@
+{
+  "name": "hospital-mgt-micro-service",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Hospital management microservice platform with NestJS, React, Postgres, and Drizzle ORM.",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace apps/api-gateway",
+    "dev:api": "npm run dev --workspace apps/api-gateway",
+    "dev:web": "npm run dev --workspace apps/web",
+    "build": "npm run build --workspace packages/db && npm run build --workspace apps/api-gateway && npm run build --workspace apps/web",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:seed": "tsx packages/db/src/seed.ts",
+    "db:studio": "drizzle-kit studio"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "drizzle-kit": "^0.30.1",
+    "prettier": "^3.4.2",
+    "tsx": "^4.23.1",
+    "typescript": "^5.7.2"
+  }
+}
